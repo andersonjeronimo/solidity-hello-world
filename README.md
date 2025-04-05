@@ -1,16 +1,7 @@
 # Hello World com Solidity + Hardhat (testes e deploy com Ignition)
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+Este projeto demonstra um caso de uso básico do Hardhat. Ele vem com um contrato de amostra, um teste para esse contrato e um módulo Hardhat Ignition que implementa esse contrato.
 
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.ts
-```
 1. Crie o repositório no [Github](https://github.com/) chamado `FirstSmartContract (exemplo)`
 2. Clone localmente com comando `git clone https://github.com/[your github username]/FirstSmartContract.git (exemplo)`
 3. Com editor de código [Visual Studio Code](https://code.visualstudio.com/download), abra a pasta do projeto recém clonado
