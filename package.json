@@ -1,0 +1,29 @@
+{
+  "name": "helloworld",
+  "version": "1.0.0",
+  "description": "Solidity Hardhat project",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx hardhat test",
+    "deploy": "npx hardhat ignition deploy ignition/modules/FirstModule.ts --network local"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "hello",
+    "world"
+  ],
+  "author": "@andersonjeronimo",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "^5.2.0",
+    "hardhat": "^2.22.18"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "helloworld": "file:"
+  }
+}
