@@ -1,4 +1,4 @@
-# Hello World com Solidity + Hardhat (testes e deploy com Ignition)
+# Hello World com Solidity + Hardhat
 
 Este projeto demonstra um caso de uso básico do Hardhat. Ele vem com um contrato de amostra, um teste para esse contrato e um módulo Hardhat Ignition que implementa esse contrato.
 
