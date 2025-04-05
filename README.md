@@ -32,7 +32,7 @@ const config: HardhatUserConfig = {
 export default config;
 ```
 
-11. Configure o módulo de `deploy do Ignition[1]` e o arquivo de `testes[2]
+11. Configure o módulo de `deploy do Ignition[1]` e o arquivo de `testes[2]`
 12. Execute o comando `npx hardhat compile`
 13. Suba (e mantenha ativa) a rede local com `npx hardhat node`
 14. A partir de agora, abra outro terminal com `CTRL + SHIFT + '` para todos os comandos seguintes
