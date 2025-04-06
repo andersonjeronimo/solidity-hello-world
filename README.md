@@ -121,6 +121,11 @@ describe("HelloWorld", function () {
 22. Depois execute o comando a seguir, utilizando o número do contrato gerado no `deploy`:  `const contract = await Contract.attach("0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512");`
 23. Finalmente, execute o comando `await contract.greet();`
 24. O resultado deverá ser: ```Hello World```
+25. Congratulations! 🚀🚀🚀
+
+
+
+
 
 
 `[1] Arquivo com o módulo de deploy:`
