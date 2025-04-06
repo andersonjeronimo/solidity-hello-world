@@ -131,7 +131,7 @@ FirstModule#FirstSmartContract - 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512
 ```
 const Contract = await ethers.getContractFactory('FirstSmartContract');
 ```
-24. Depois execute o comando a seguir, utilizando o endereço do contrato gerado no `deploy` (passo `18`):
+23. Depois execute o comando a seguir, utilizando o endereço do contrato gerado no `deploy` (passo `18`):
 ```
 const contract = await Contract.attach("0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512");
 ```
