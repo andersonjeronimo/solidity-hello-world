@@ -48,7 +48,7 @@ const config: HardhatUserConfig = {
 export default config;
 ```
 
-11. Configure o módulo de `deploy do Ignition[1]` assim:
+11. Configure o módulo de deploy do `Ignition` assim:
 ```
 // This setup uses Hardhat Ignition to manage smart contract deployments.
 // Learn more about it at https://hardhat.org/ignition
@@ -64,7 +64,7 @@ const FirstModule = buildModule("FirstModule", (m) => {
 
 export default FirstModule;
 ```
-12. E o arquivo de `testes[2]` assim:
+12. E o arquivo de `testes` assim:
 ```
 import { loadFixture } from "@nomicfoundation/hardhat-toolbox/network-helpers";
 import { expect } from "chai";
@@ -129,82 +129,3 @@ const contract = await Contract.attach("0xe7f1725E7734CE288F8367e1Bb143E90bb3F05
 25. Finalmente, execute o comando ```await contract.greet();```
 26. O resultado deverá ser: ```Hello World```
 27. Congratulations! 🚀🚀🚀
-
-
-
-
-
-
-`[1] Arquivo com o módulo de deploy:`
-```
-// This setup uses Hardhat Ignition to manage smart contract deployments.
-// Learn more about it at https://hardhat.org/ignition
-
-import { buildModule } from "@nomicfoundation/hardhat-ignition/modules";  
-
-const FirstModule = buildModule("FirstModule", (m) => {
-  const greet = "Hello World";
-  const constract = m.contract("FirstSmartContract", [greet]); 
-
-  return { constract };
-});  
-
-export default FirstModule;
-```
-
-`[2]Arquivo de testes`
-```
-import { loadFixture } from "@nomicfoundation/hardhat-toolbox/network-helpers";
-import { expect } from "chai";
-import hre from "hardhat";  
-
-describe("HelloWorld", function () {
-
-  // We define a fixture to reuse the same setup in every test.
-  // We use loadFixture to run this setup once, snapshot that state,
-  // and reset Hardhat Network to that snapshot in every test.
-  
-  async function deployFixture() {
-    // Contracts are deployed using the first signer/account by default
-    
-    const [owner, otherAccount] = await hre.ethers.getSigners();
-    const greet = "Hello World";
-    const FirstSmartContract = await hre.ethers.getContractFactory("FirstSmartContract");
-    const contract = await FirstSmartContract.deploy(greet);
-
-    return { contract, owner, otherAccount };
-  }  
-
-  describe("Deployment", function () {
-    it("Should set the right greet", async function () {
-      const { contract } = await loadFixture(deployFixture);
-      expect(await contract.greet()).to.equal("Hello World");
-    });
-
-    it("Should set the right owner", async function () {
-      const { contract, owner } = await loadFixture(deployFixture);
-      expect(await contract.owner()).to.equal(owner.address);
-    });
-
-  });  
-
-});
-```
-
-
-`Smart Contract do passo 9:`
-```
-// SPDX-License-Identifier: MIT
-// Compatible with OpenZeppelin Contracts ^5.0.0
-pragma solidity ^0.8.22;
-import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";  
-
-contract FirstSmartContract is Ownable {
-    string public greet;  
-
-    constructor(string memory _greet) Ownable(msg.sender) {
-        greet = _greet;
-    }
-
-}
-```
