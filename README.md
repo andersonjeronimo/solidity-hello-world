@@ -3,14 +3,15 @@
 Este projeto demonstra um caso de uso básico do Hardhat. Ele vem com um contrato de amostra, um teste para esse contrato e um módulo Hardhat Ignition que implementa esse contrato.
 
 1. Crie o repositório no [Github](https://github.com/) chamado `FirstSmartContract (exemplo)`
-2. Clone localmente com comando ```git clone https://github.com/[your github username]/FirstSmartContract.git (exemplo)```
-3. Com editor de código [Visual Studio Code](https://code.visualstudio.com/download), abra a pasta do projeto recém clonado
-4. Abra o console integrado do **Visual Studio Code** com o atalho `CTRL + '` ou no menu `View -> Terminal`
-5. Inicie um projeto [Node](https://nodejs.org/pt) com o comando ```npm init -y```
-6. Instale o [Hardhat](https://hardhat.org/) com o comando ```npm i -D hardhat```
-7. Inicialize um projeto [Typescript](https://www.typescriptlang.org/) [Hardhat](https://hardhat.org/) com o comando ```npx hardhat init```
-8. Instale a biblioteca [contracts](https://github.com/OpenZeppelin/openzeppelin-contracts) do [OpenZeppelin](https://www.openzeppelin.com/) com o comando ```npm i -D @openzeppelin/contracts```
-9. Altere o contrato gerado no passo `7` (Lock.ts) da seguinte forma, renomeando o arquivo como `FirstSmartContract`:
+2. Clone localmente com comando
+```git clone https://github.com/[your github username]/FirstSmartContract.git (exemplo)```
+4. Com editor de código [Visual Studio Code](https://code.visualstudio.com/download), abra a pasta do projeto recém clonado
+5. Abra o console integrado do **Visual Studio Code** com o atalho `CTRL + '` ou no menu `View -> Terminal`
+6. Inicie um projeto [Node](https://nodejs.org/pt) com o comando ```npm init -y```
+7. Instale o [Hardhat](https://hardhat.org/) com o comando ```npm i -D hardhat```
+8. Inicialize um projeto [Typescript](https://www.typescriptlang.org/) [Hardhat](https://hardhat.org/) com o comando ```npx hardhat init```
+9. Instale a biblioteca [contracts](https://github.com/OpenZeppelin/openzeppelin-contracts) do [OpenZeppelin](https://www.openzeppelin.com/) com o comando ```npm i -D @openzeppelin/contracts```
+10. Altere o contrato gerado no passo `7` (Lock.ts) da seguinte forma, renomeando o arquivo como `FirstSmartContract`:
 ```
 // SPDX-License-Identifier: MIT
 // Compatible with OpenZeppelin Contracts ^5.0.0
