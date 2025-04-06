@@ -10,7 +10,22 @@ Este projeto demonstra um caso de uso básico do Hardhat. Ele vem com um contrat
 6. Instale o [Hardhat](https://hardhat.org/) com o comando `npm i -D hardhat`
 7. Inicialize um projeto [Typescript](https://www.typescriptlang.org/) [Hardhat](https://hardhat.org/) com o comando `npx hardhat init`
 8. Instale a biblioteca [contracts](https://github.com/OpenZeppelin/openzeppelin-contracts) do [OpenZeppelin](https://www.openzeppelin.com/) com o comando `npm i -D @openzeppelin/contracts`
-9. Altere o contrato gerado no passo `7` (Lock.ts) da seguinte forma:
+9. Altere o contrato gerado no passo `7` (Lock.ts) da seguinte forma, renomeando o arquivo como `FirstSmartContract`:
+```
+// SPDX-License-Identifier: MIT
+// Compatible with OpenZeppelin Contracts ^5.0.0
+pragma solidity ^0.8.22;
+import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";  
+
+contract FirstSmartContract is Ownable {
+    string public greet;  
+
+    constructor(string memory _greet) Ownable(msg.sender) {
+        greet = _greet;
+    }
+
+}
+```
 10. Configure o arquivo `hardhat.config.ts` assim: 
 ```
 import { HardhatUserConfig } from "hardhat/config";
