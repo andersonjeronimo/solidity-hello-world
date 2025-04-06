@@ -48,7 +48,7 @@ const config: HardhatUserConfig = {
 export default config;
 ```
 
-11. Configure o módulo de deploy do `Ignition` (diretório `./ignition/modules/`) assim:
+11. Configure o módulo de deploy do `Ignition` (diretório `./ignition/modules/`) assim, renomeando-o como `FirstModule.ts`:
 ```
 // This setup uses Hardhat Ignition to manage smart contract deployments.
 // Learn more about it at https://hardhat.org/ignition
