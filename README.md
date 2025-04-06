@@ -5,7 +5,7 @@ Este projeto demonstra um caso de uso básico do Hardhat. Ele vem com um contrat
 1. Crie o repositório no [Github](https://github.com/) chamado `FirstSmartContract (exemplo)`
 2. Clone localmente com comando
 ```git clone https://github.com/[your github username]/FirstSmartContract.git (exemplo)```
-3 Com editor de código [Visual Studio Code](https://code.visualstudio.com/download), abra a pasta do projeto recém clonado
+3. Com editor de código [Visual Studio Code](https://code.visualstudio.com/download), abra a pasta do projeto recém clonado
 4. Abra o console integrado do **Visual Studio Code** com o atalho `CTRL + '` ou no menu `View -> Terminal`
 5. Inicie um projeto [Node](https://nodejs.org/pt) com o comando ```npm init -y```
 6. Instale o [Hardhat](https://hardhat.org/) com o comando ```npm i -D hardhat```
