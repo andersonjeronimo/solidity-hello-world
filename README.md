@@ -3,13 +3,13 @@
 Este projeto demonstra um caso de uso básico do Hardhat. Ele vem com um contrato de amostra, um teste para esse contrato e um módulo Hardhat Ignition que implementa esse contrato.
 
 1. Crie o repositório no [Github](https://github.com/) chamado `FirstSmartContract (exemplo)`
-2. Clone localmente com comando `git clone https://github.com/[your github username]/FirstSmartContract.git (exemplo)`
+2. Clone localmente com comando ```git clone https://github.com/[your github username]/FirstSmartContract.git (exemplo)```
 3. Com editor de código [Visual Studio Code](https://code.visualstudio.com/download), abra a pasta do projeto recém clonado
-4. Abra o console integrado do **Visual Studio Code** com o comando `CTRL + '` ou no menu `View -> Terminal`
-5. Inicie um projeto [Node](https://nodejs.org/pt) com o comando `npm init -y`
-6. Instale o [Hardhat](https://hardhat.org/) com o comando `npm i -D hardhat`
-7. Inicialize um projeto [Typescript](https://www.typescriptlang.org/) [Hardhat](https://hardhat.org/) com o comando `npx hardhat init`
-8. Instale a biblioteca [contracts](https://github.com/OpenZeppelin/openzeppelin-contracts) do [OpenZeppelin](https://www.openzeppelin.com/) com o comando `npm i -D @openzeppelin/contracts`
+4. Abra o console integrado do **Visual Studio Code** com o atalho `CTRL + '` ou no menu `View -> Terminal`
+5. Inicie um projeto [Node](https://nodejs.org/pt) com o comando ```npm init -y```
+6. Instale o [Hardhat](https://hardhat.org/) com o comando ```npm i -D hardhat```
+7. Inicialize um projeto [Typescript](https://www.typescriptlang.org/) [Hardhat](https://hardhat.org/) com o comando ```npx hardhat init```
+8. Instale a biblioteca [contracts](https://github.com/OpenZeppelin/openzeppelin-contracts) do [OpenZeppelin](https://www.openzeppelin.com/) com o comando ```npm i -D @openzeppelin/contracts```
 9. Altere o contrato gerado no passo `7` (Lock.ts) da seguinte forma, renomeando o arquivo como `FirstSmartContract`:
 ```
 // SPDX-License-Identifier: MIT
@@ -101,11 +101,11 @@ describe("HelloWorld", function () {
 
 });
 ```
-13. Execute o comando `npx hardhat compile`
-14. Suba (e mantenha ativa) a rede local com `npx hardhat node`
-15. A partir de agora, abra outro terminal com `CTRL + SHIFT + '` para todos os comandos seguintes
-16. No novo terminal, execute o comando `npx hardhat test`. Se tudo correr bem (passar nos testes), prossiga para o próximo passo
-17. Faça `deploy` localmente com o comando `npx hardhat ignition deploy ignition/modules/FirstModule.ts --network local`
+13. Execute o comando ```npx hardhat compile```
+14. Suba (e mantenha ativa) a rede local com o comando ```npx hardhat node```
+15. A partir de agora, abra outro terminal com o atalho `CTRL + SHIFT + '` para todos os comandos seguintes
+16. No novo terminal, execute o comando ```npx hardhat test```. Se tudo correr bem (passar nos testes), prossiga para o próximo passo
+17. Faça `deploy` localmente com o comando ```npx hardhat ignition deploy ignition/modules/FirstModule.ts --network local```
 18. O resultado será: ```Hardhat Ignition 🚀
 	Deploying [ FirstModule ]
 	Batch #1
@@ -116,12 +116,13 @@ describe("HelloWorld", function () {
 
 	
 19. Guarde o endereço do contrato gerado no `deploy`. Neste exemplo, o endereço gerado foi `0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512`
-20. Para interagir com o contrato localmente, execute o comando `npx hardhat console --network local`
-21. No console que iniciou, use o comando `const Contract = await ethers.getContractFactory('FirstSmartContract');`
-22. Depois execute o comando a seguir, utilizando o endereço do contrato gerado no `deploy` (passo `17`):  `const contract = await Contract.attach("0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512");`
-23. Finalmente, execute o comando `await contract.greet();`
-24. O resultado deverá ser: ```Hello World```
-25. Congratulations! 🚀🚀🚀
+20. Para interagir com o contrato localmente, execute o comando ```npx hardhat console --network local```
+21. No prompt que iniciou, use o comando ```const Contract = await ethers.getContractFactory('FirstSmartContract');```
+22. Depois execute o comando a seguir, utilizando o endereço do contrato gerado no `deploy` (passo `17`):
+```const contract = await Contract.attach("0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512");```
+24. Finalmente, execute o comando ```await contract.greet();```
+25. O resultado deverá ser: ```Hello World```
+26. Congratulations! 🚀🚀🚀
 
 
 
