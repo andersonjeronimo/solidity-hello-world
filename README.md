@@ -11,7 +11,7 @@ Este projeto demonstra um caso de uso básico do Hardhat. Ele vem com um contrat
 7. Instale o [Hardhat](https://hardhat.org/) com o comando ```npm i -D hardhat```
 8. Inicialize um projeto [Typescript](https://www.typescriptlang.org/) [Hardhat](https://hardhat.org/) com o comando ```npx hardhat init```
 9. Instale a biblioteca [contracts](https://github.com/OpenZeppelin/openzeppelin-contracts) do [OpenZeppelin](https://www.openzeppelin.com/) com o comando ```npm i -D @openzeppelin/contracts```
-10.Instale, como dependência de desenvolvimento, o dotenv, com o comando ```npm i -D dotenv``` e crie na raiz do projeto um arquivo chamando `.env`, que deve ficar assim:
+10. Instale, como dependência de desenvolvimento, o dotenv, com o comando ```npm i -D dotenv``` e crie na raiz do projeto um arquivo chamando `.env`, que deve ficar assim:
 ```
 SECRET=test test test test test test test test test test test junk
 CHAIN_ID=31337
