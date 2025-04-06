@@ -107,19 +107,22 @@ describe("HelloWorld", function () {
 15. A partir de agora, abra outro terminal com o atalho `CTRL + SHIFT + '` para todos os comandos seguintes
 16. No novo terminal, execute o comando ```npx hardhat test```. Se tudo correr bem (passar nos testes), prossiga para o próximo passo
 17. Faça `deploy` localmente com o comando ```npx hardhat ignition deploy ignition/modules/FirstModule.ts --network local```
-18. O resultado será: ```Hardhat Ignition 🚀
-	Deploying [ FirstModule ]
-	Batch #1
-	Executed FirstModule#FirstSmartContract
-	[ FirstModule ] successfully deployed 
-	🚀Deployed Addresses
-	FirstModule#FirstSmartContract - 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512```	
+18. O resultado será:
+```
+Hardhat Ignition 🚀
+Deploying [ FirstModule ]
+Batch #1
+Executed FirstModule#FirstSmartContract
+[ FirstModule ] successfully deployed 
+🚀Deployed Addresses
+FirstModule#FirstSmartContract - 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512
+```	
 
 	
-19. Guarde o endereço do contrato gerado no `deploy`. Neste exemplo, o endereço gerado foi `0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512`
-20. Para interagir com o contrato localmente, execute o comando ```npx hardhat console --network local```
-21. No prompt que iniciou, use o comando ```const Contract = await ethers.getContractFactory('FirstSmartContract');```
-22. Depois execute o comando a seguir, utilizando o endereço do contrato gerado no `deploy` (passo `17`):
+20. Guarde o endereço do contrato gerado no `deploy`. Neste exemplo, o endereço gerado foi `0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512`
+21. Para interagir com o contrato localmente, execute o comando ```npx hardhat console --network local```
+22. No prompt que iniciou, use o comando ```const Contract = await ethers.getContractFactory('FirstSmartContract');```
+23. Depois execute o comando a seguir, utilizando o endereço do contrato gerado no `deploy` (passo `17`):
 ```const contract = await Contract.attach("0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512");```
 24. Finalmente, execute o comando ```await contract.greet();```
 25. O resultado deverá ser: ```Hello World```
