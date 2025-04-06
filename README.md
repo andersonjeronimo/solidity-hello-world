@@ -104,7 +104,7 @@ describe("HelloWorld", function () {
 13. Execute o comando `npx hardhat compile`
 14. Suba (e mantenha ativa) a rede local com `npx hardhat node`
 15. A partir de agora, abra outro terminal com `CTRL + SHIFT + '` para todos os comandos seguintes
-16. No novo terminal, execute o comando `npx hardhat test`
+16. No novo terminal, execute o comando `npx hardhat test`. Se tudo correr bem (passar nos testes), prossiga para o próximo passo
 17. Faça `deploy` localmente com o comando `npx hardhat ignition deploy ignition/modules/FirstModule.ts --network local`
 18. O resultado será: ```Hardhat Ignition 🚀
 	Deploying [ FirstModule ]
