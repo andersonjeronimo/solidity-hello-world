@@ -115,7 +115,7 @@ describe("HelloWorld", function () {
 	FirstModule#FirstSmartContract - 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512```	
 
 	
-19. Guarde o endereço do contrato gerado no `deploy`. Neste exemplo, o endereço foi `0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512`
+19. Guarde o endereço do contrato gerado no `deploy`. Neste exemplo, o endereço gerado foi `0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512`
 20. Para interagir com o contrato localmente, execute o comando `npx hardhat console --network local`
 21. No console que iniciou, use o comando `const Contract = await ethers.getContractFactory('FirstSmartContract');`
 22. Depois execute o comando a seguir, utilizando o endereço do contrato gerado no `deploy` (passo `17`):  `const contract = await Contract.attach("0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512");`
