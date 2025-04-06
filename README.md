@@ -47,13 +47,66 @@ const config: HardhatUserConfig = {
 export default config;
 ```
 
-11. Configure o módulo de `deploy do Ignition[1]` e o arquivo de `testes[2]`
-12. Execute o comando `npx hardhat compile`
-13. Suba (e mantenha ativa) a rede local com `npx hardhat node`
-14. A partir de agora, abra outro terminal com `CTRL + SHIFT + '` para todos os comandos seguintes
-15. No novo terminal, execute o comando `npx hardhat test`
-16. Faça `deploy` localmente com o comando `npx hardhat ignition deploy ignition/modules/FirstModule.ts --network local`
-17. O resultado será: ```Hardhat Ignition 🚀
+11. Configure o módulo de `deploy do Ignition[1]` assim:
+```
+// This setup uses Hardhat Ignition to manage smart contract deployments.
+// Learn more about it at https://hardhat.org/ignition
+
+import { buildModule } from "@nomicfoundation/hardhat-ignition/modules";  
+
+const FirstModule = buildModule("FirstModule", (m) => {
+  const greet = "Hello World";
+  const constract = m.contract("FirstSmartContract", [greet]); 
+
+  return { constract };
+});  
+
+export default FirstModule;
+```
+12. E o arquivo de `testes[2]` assim:
+```
+import { loadFixture } from "@nomicfoundation/hardhat-toolbox/network-helpers";
+import { expect } from "chai";
+import hre from "hardhat";  
+
+describe("HelloWorld", function () {
+
+  // We define a fixture to reuse the same setup in every test.
+  // We use loadFixture to run this setup once, snapshot that state,
+  // and reset Hardhat Network to that snapshot in every test.
+  
+  async function deployFixture() {
+    // Contracts are deployed using the first signer/account by default
+    
+    const [owner, otherAccount] = await hre.ethers.getSigners();
+    const greet = "Hello World";
+    const FirstSmartContract = await hre.ethers.getContractFactory("FirstSmartContract");
+    const contract = await FirstSmartContract.deploy(greet);
+
+    return { contract, owner, otherAccount };
+  }  
+
+  describe("Deployment", function () {
+    it("Should set the right greet", async function () {
+      const { contract } = await loadFixture(deployFixture);
+      expect(await contract.greet()).to.equal("Hello World");
+    });
+
+    it("Should set the right owner", async function () {
+      const { contract, owner } = await loadFixture(deployFixture);
+      expect(await contract.owner()).to.equal(owner.address);
+    });
+
+  });  
+
+});
+```
+13. Execute o comando `npx hardhat compile`
+14. Suba (e mantenha ativa) a rede local com `npx hardhat node`
+15. A partir de agora, abra outro terminal com `CTRL + SHIFT + '` para todos os comandos seguintes
+16. No novo terminal, execute o comando `npx hardhat test`
+17. Faça `deploy` localmente com o comando `npx hardhat ignition deploy ignition/modules/FirstModule.ts --network local`
+18. O resultado será: ```Hardhat Ignition 🚀
 	Deploying [ FirstModule ]
 	Batch #1
 	Executed FirstModule#FirstSmartContract
@@ -62,12 +115,12 @@ export default config;
 	FirstModule#FirstSmartContract - 0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512```	
 
 	
-18. Guarde o número do contrato gerado no `deploy`
-19. Para interagir com o contrato localmente, execute o comando `npx hardhat console --network local`
-20. No console que iniciou, use o comando `const Contract = await ethers.getContractFactory('FirstSmartContract');`
-21. Depois execute o comando a seguir, utilizando o número do contrato gerado no `deploy`:  `const contract = await Contract.attach("0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512");`
-22. Finalmente, execute o comando `await contract.greet();`
-23. O resultado deverá ser: ```Hello World```
+19. Guarde o número do contrato gerado no `deploy`
+20. Para interagir com o contrato localmente, execute o comando `npx hardhat console --network local`
+21. No console que iniciou, use o comando `const Contract = await ethers.getContractFactory('FirstSmartContract');`
+22. Depois execute o comando a seguir, utilizando o número do contrato gerado no `deploy`:  `const contract = await Contract.attach("0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512");`
+23. Finalmente, execute o comando `await contract.greet();`
+24. O resultado deverá ser: ```Hello World```
 
 
 `[1] Arquivo com o módulo de deploy:`
