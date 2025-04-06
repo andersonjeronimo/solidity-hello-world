@@ -11,7 +11,7 @@ Este projeto demonstra um caso de uso básico do Hardhat. Ele vem com um contrat
 7. Instale o [Hardhat](https://hardhat.org/) com o comando ```npm i -D hardhat```
 8. Inicialize um projeto [Typescript](https://www.typescriptlang.org/) [Hardhat](https://hardhat.org/) com o comando ```npx hardhat init```
 9. Instale a biblioteca [contracts](https://github.com/OpenZeppelin/openzeppelin-contracts) do [OpenZeppelin](https://www.openzeppelin.com/) com o comando ```npm i -D @openzeppelin/contracts```
-10. Altere o contrato gerado no passo `7` (Lock.ts) da seguinte forma, renomeando o arquivo como `FirstSmartContract`:
+10. Altere o contrato gerado no passo `7` (diretório `./contracts/Lock.ts`) da seguinte forma, renomeando o arquivo `Lock.ts` para `FirstSmartContract.ts`:
 ```
 // SPDX-License-Identifier: MIT
 // Compatible with OpenZeppelin Contracts ^5.0.0
@@ -48,7 +48,7 @@ const config: HardhatUserConfig = {
 export default config;
 ```
 
-11. Configure o módulo de deploy do `Ignition` assim:
+11. Configure o módulo de deploy do `Ignition` (diretório `./ignition/modules/`) assim:
 ```
 // This setup uses Hardhat Ignition to manage smart contract deployments.
 // Learn more about it at https://hardhat.org/ignition
@@ -64,7 +64,7 @@ const FirstModule = buildModule("FirstModule", (m) => {
 
 export default FirstModule;
 ```
-12. E o arquivo de `testes` assim:
+12. E o arquivo de `testes` (diretório `./test`) assim:
 ```
 import { loadFixture } from "@nomicfoundation/hardhat-toolbox/network-helpers";
 import { expect } from "chai";
