@@ -35,22 +35,26 @@ contract FirstSmartContract is Ownable {
 ```
 11. Configure o arquivo `hardhat.config.ts` assim: 
 ```
+import dotenv from "dotenv";
+dotenv.config();
+
 import { HardhatUserConfig } from "hardhat/config";
-import "@nomicfoundation/hardhat-toolbox";  
+import "@nomicfoundation/hardhat-toolbox";
 
 const config: HardhatUserConfig = {
-  solidity: "0.8.28",
-  defaultNetwork: "local",
-  networks: {
-    local: {
-      url: "http://127.0.0.1:8545",
-      chainId: 31337,
-      accounts: {
-        mnemonic: "test test test test test test test test test test test junk"
-      }
-    }
-  }
+  solidity: "0.8.28",
+  defaultNetwork: "local",
+  networks: {
+    local: {
+      url: process.env.URL,
+      chainId: parseInt(`${process.env.CHAIN_ID}`),
+      accounts: {
+        mnemonic: process.env.SECRET
+      }
+    }
+  }
 };
+
 export default config;
 ```
 
